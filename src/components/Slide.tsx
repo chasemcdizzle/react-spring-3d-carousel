@@ -83,7 +83,8 @@ export default function Slide({
   }
 
   if (to.opacity === undefined) {
-    to.opacity = distanceFactor * distanceFactor;
+    // to.opacity = distanceFactor * distanceFactor;
+    to.opacity = 1;
   }
 
   return (
