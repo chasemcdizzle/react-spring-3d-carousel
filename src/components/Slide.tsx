@@ -62,7 +62,8 @@ export default function Slide({
   onClick,
   offsetFn,
 }: IProps) {
-  const offsetFromCenter = index - offsetRadius;
+  // const offsetFromCenter = index - offsetRadius;
+  const offsetFromCenter = 1;
   const distanceFactor = 1 - Math.abs(offsetFromCenter / (offsetRadius + 1));
 
   let to = offsetFn?.(offsetFromCenter, index) || {};

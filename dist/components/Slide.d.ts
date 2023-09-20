@@ -1,4 +1,4 @@
-import React from "react";
+/// <reference types="react" />
 import { OffsetFn } from "./Carousel";
 interface IProps {
     content: JSX.Element;
@@ -8,5 +8,5 @@ interface IProps {
     animationConfig: object;
     offsetFn?: OffsetFn;
 }
-export default function Slide({ content, offsetRadius, index, animationConfig, onClick, offsetFn, }: IProps): React.JSX.Element;
+export default function Slide({ content, offsetRadius, index, animationConfig, onClick, offsetFn, }: IProps): JSX.Element;
 export {};

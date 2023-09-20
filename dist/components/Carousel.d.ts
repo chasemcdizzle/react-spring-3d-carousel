@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import PropTypes from "prop-types";
 export declare type OffsetFn = (offsetFromCenter: number, index: number) => {
     transform?: string;
@@ -56,6 +56,6 @@ declare class Carousel extends Component<IProps, IState> {
     handleGoToSlide: () => void;
     clampOffsetRadius(offsetRadius: number): number;
     getPresentableSlides(): Slide[];
-    render(): React.JSX.Element;
+    render(): JSX.Element;
 }
 export default Carousel;
