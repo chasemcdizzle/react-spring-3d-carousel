@@ -39,7 +39,7 @@ interface IState {
   newSlide: boolean;
 }
 
-interface IProps {
+export interface IProps {
   slides: Slide[];
   goToSlide?: number;
   showNavigation: boolean;
@@ -47,16 +47,6 @@ interface IProps {
   animationConfig: object;
   goToSlideDelay: number;
   offsetFn?: OffsetFn
-}
-
-export interface CarouselProps {
-  slides: Slide[];
-  goToSlide?: number;
-  showNavigation: boolean;
-  offsetRadius: number;
-  animationConfig: object;
-  goToSlideDelay: number;
-  offsetFn?: OffsetFn;
 }
 
 
