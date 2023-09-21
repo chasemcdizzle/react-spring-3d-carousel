@@ -218,4 +218,4 @@ class CarouselComponent extends Component<IProps, IState> {
 }
 
 // export const Carousel: React.FC<IProps> = CarouselComponent;
-export default class Carousel extends CarouselComponent {}
+export class Carousel extends CarouselComponent {}
