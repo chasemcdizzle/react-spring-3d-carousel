@@ -49,6 +49,17 @@ interface IProps {
   offsetFn?: OffsetFn
 }
 
+export interface CarouselProps {
+  slides: Slide[];
+  goToSlide?: number;
+  showNavigation: boolean;
+  offsetRadius: number;
+  animationConfig: object;
+  goToSlideDelay: number;
+  offsetFn?: OffsetFn;
+}
+
+
 function mod(a: number, b: number): number {
   return ((a % b) + b) % b;
 }
