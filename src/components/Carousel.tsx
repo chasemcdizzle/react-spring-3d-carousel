@@ -3,7 +3,6 @@ import styled from "@emotion/styled";
 import Slide from "./Slide";
 import leftNavigation from "../static/LeftNavigation.png";
 import rightNavigation from "../static/RightNavigation.png";
-import PropTypes from "prop-types";
 
 const Wrapper = styled.div`
   position: relative;
@@ -25,19 +24,12 @@ const NavigationButtons = styled.div`
   }
 `;
 
-const DEFAULT_GO_TO_SLIDE_DELAY = 200;
-
 export type OffsetFn = (
-    offsetFromCenter: number,
-    index: number
-  ) => { transform?: string; left?: string | number; opacity?: number };
+  offsetFromCenter: number,
+  index: number
+) => { transform?: string; left?: string | number; opacity?: number };
 
-interface IState {
-  index: number;
-  goToSlide: number | null;
-  prevPropsGoToSlide: number;
-  newSlide: boolean;
-}
+const DEFAULT_GO_TO_SLIDE_DELAY = 200;
 
 export interface IProps {
   slides: Slide[];
@@ -46,15 +38,21 @@ export interface IProps {
   offsetRadius: number;
   animationConfig: object;
   goToSlideDelay: number;
-  offsetFn?: OffsetFn
+  offsetFn?: OffsetFn;
 }
 
+interface IState {
+  index: number;
+  goToSlide: number | null;
+  prevPropsGoToSlide: number;
+  newSlide: boolean;
+}
 
 function mod(a: number, b: number): number {
   return ((a % b) + b) % b;
 }
 
-class Carousel extends Component<IProps, IState> {
+class CarouselComponent extends Component<IProps, IState> {
   state: IState = {
     index: 0,
     goToSlide: null,
@@ -63,21 +61,6 @@ class Carousel extends Component<IProps, IState> {
   };
 
   goToIn?: number;
-
-  static propTypes = {
-    slides: PropTypes.arrayOf(
-      PropTypes.shape({
-        key: PropTypes.any,
-        content: PropTypes.object,
-      })
-    ).isRequired,
-    goToSlide: PropTypes.number,
-    showNavigation: PropTypes.bool,
-    offsetRadius: PropTypes.number,
-    animationConfig: PropTypes.object,
-    goToSlideDelay: PropTypes.number,
-    offsetFn: PropTypes.func,
-  };
 
   static defaultProps = {
     offsetRadius: 2,
@@ -234,4 +217,5 @@ class Carousel extends Component<IProps, IState> {
   }
 }
 
-export default Carousel;
+// export const Carousel: React.FC<IProps> = CarouselComponent;
+export default class Carousel extends CarouselComponent {}
