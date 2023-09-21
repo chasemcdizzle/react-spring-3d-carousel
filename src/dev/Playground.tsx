@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Carousel from "../components/Carousel";
+import { Carousel } from "../components/Carousel";
 import uuidv4 from "uuid";
 import { config } from "react-spring";
 

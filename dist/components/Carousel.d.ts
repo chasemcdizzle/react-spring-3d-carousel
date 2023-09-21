@@ -1,16 +1,9 @@
 import { Component } from "react";
-import PropTypes from "prop-types";
 export declare type OffsetFn = (offsetFromCenter: number, index: number) => {
     transform?: string;
     left?: string | number;
     opacity?: number;
 };
-interface IState {
-    index: number;
-    goToSlide: number | null;
-    prevPropsGoToSlide: number;
-    newSlide: boolean;
-}
 export interface IProps {
     slides: Slide[];
     goToSlide?: number;
@@ -20,21 +13,15 @@ export interface IProps {
     goToSlideDelay: number;
     offsetFn?: OffsetFn;
 }
-declare class Carousel extends Component<IProps, IState> {
+interface IState {
+    index: number;
+    goToSlide: number | null;
+    prevPropsGoToSlide: number;
+    newSlide: boolean;
+}
+declare class CarouselComponent extends Component<IProps, IState> {
     state: IState;
     goToIn?: number;
-    static propTypes: {
-        slides: PropTypes.Validator<(PropTypes.InferProps<{
-            key: PropTypes.Requireable<any>;
-            content: PropTypes.Requireable<object>;
-        }> | null | undefined)[]>;
-        goToSlide: PropTypes.Requireable<number>;
-        showNavigation: PropTypes.Requireable<boolean>;
-        offsetRadius: PropTypes.Requireable<number>;
-        animationConfig: PropTypes.Requireable<object>;
-        goToSlideDelay: PropTypes.Requireable<number>;
-        offsetFn: PropTypes.Requireable<(...args: any[]) => any>;
-    };
     static defaultProps: {
         offsetRadius: number;
         animationConfig: {
@@ -58,4 +45,6 @@ declare class Carousel extends Component<IProps, IState> {
     getPresentableSlides(): Slide[];
     render(): JSX.Element;
 }
-export default Carousel;
+export declare class Carousel extends CarouselComponent {
+}
+export {};
