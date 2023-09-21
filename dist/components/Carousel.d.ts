@@ -11,7 +11,7 @@ interface IState {
     prevPropsGoToSlide: number;
     newSlide: boolean;
 }
-interface IProps {
+export interface IProps {
     slides: Slide[];
     goToSlide?: number;
     showNavigation: boolean;
