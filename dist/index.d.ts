@@ -1,1 +1,1 @@
-export { Carousel } from "./components/Carousel";
+export { Carousel, IProps } from "./components/Carousel";
